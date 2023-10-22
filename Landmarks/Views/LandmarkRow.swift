@@ -17,6 +17,12 @@ struct LandmarkRow: View {
                 .resizable()
                 .frame(width: 50, height: 50)
             Text(landmark.name)
+
+            Spacer()
+
+            if landmark.isFavorite {
+                Image(systemName: "star.fill")
+            }
         }
 
     }
@@ -25,9 +31,10 @@ struct LandmarkRow: View {
 
 struct LandmarkRow_Previews: PreviewProvider {
     static var previews: some View {
+        let modelData = ModelData()
         Group {
-            LandmarkRow(landmark: landmarks[0])
-            LandmarkRow(landmark: landmarks[1])
+            LandmarkRow(landmark: modelData.landmarks[0])
+            LandmarkRow(landmark: modelData.landmarks[1])
         }
     }
 }
