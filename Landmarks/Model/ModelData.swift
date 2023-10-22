@@ -8,7 +8,6 @@
 import Foundation
 
 class ModelData: ObservableObject {
-    @Published var isFavoriteBinding = false
     @Published var landmarks: [Landmark] = load("landmarkData.json")
 }
 

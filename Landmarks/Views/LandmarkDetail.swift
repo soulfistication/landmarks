@@ -19,6 +19,12 @@ struct LandmarkDetail: View {
     
     var body: some View {
 
+        let favoriteBinding = Binding {
+            self.modelData.landmarks[landmarkIndex].isFavorite
+        } set: { value in
+            self.modelData.landmarks[landmarkIndex].isFavorite = value
+        }
+
         ScrollView {
 
             MapView(coordinate: landmark.locationCoordinate)
@@ -33,7 +39,7 @@ struct LandmarkDetail: View {
                 HStack {
                     Text(landmark.name)
                         .font(.title)
-                    FavoriteButton(isSet: $modelData.isFavoriteBinding)
+                    FavoriteButton(isSet: favoriteBinding)
                 }
 
                 HStack {
