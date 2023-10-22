@@ -1,2 +1,2 @@
 # landmarks
-Apple Landmarks SwiftUI tutorial but Xcode 13 compatible.
+Apple Landmarks SwiftUI tutorial backported to Xcode 13 without using Observable framework.
