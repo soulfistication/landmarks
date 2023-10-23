@@ -19,11 +19,11 @@ struct LandmarkDetail: View {
     
     var body: some View {
 
-        let favoriteBinding = Binding {
+        let favoriteBinding = Binding(get: {
             self.modelData.landmarks[landmarkIndex].isFavorite
-        } set: { value in
+        }, set: { value in
             self.modelData.landmarks[landmarkIndex].isFavorite = value
-        }
+        })
 
         ScrollView {
 
